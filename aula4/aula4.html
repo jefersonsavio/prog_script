@@ -7,16 +7,16 @@
 </head>
 
 <body>
-    <header>
-        <img src="baixados.webp" alt="js" width="30%">
-    </header>
+ 
     <script type="text/javascript">
         alert("Bem vindo a segunda aula de javaScript");
         let nota1 = parseFloat(prompt("Informe a primeira nota: "));
         let nota2 = parseFloat(prompt("Informe a segunda nota: "));
 
         if (isNaN(nota1) || isNaN(nota2)) {
-            let media = (nota1 + nota2) / 2;
+           alert("Informe apenas numeros");
+        } else {
+             let media = (nota1 + nota2) / 2;
             document.write(`A média é: ${media}`);
         }
 
