@@ -22,17 +22,38 @@
         document.write(`<br>`);
 
         let cidade = prompt("Informe sua Cidade: ").toUpperCase();;
-        if (cidade == "TAQUARITINGA") {
+        /*if (cidade == "TAQUARITINGA") {
             document.write(`${cidade} é conhecida pelo seu Carnaval.`);
         } else if (cidade == "MONTE ALTO") {
             document.write(`${cidade} é conhecida pelo seu Museu.`);
         } else if (cidade == "MATAO" || cidade == "MATÃO") {
             document.write(`${cidade} é conhecida por suas industrias.`);
-        } else if (cidade == "DOBRADA" || cidade == "GUARIROBA"){
-            document.write(`${cidade} é conhecida por sua festa.`)
-        }else{
-            document.write("Informe uma cidade não identificada!.")
+        } else if (cidade == "DOBRADA" || cidade == "GUARIROBA") {
+            document.write(`${cidade} é conhecida por sua festa.`);
+        } else {
+            document.write("Cidade não identificada!.");
+        }*/
+        document.write('<br>');
+        switch (cidade) {
+            case 'TAQURITINGA':
+                document.write(`${cidade} é conhecida pelo seu Carnaval.`);
+                break;
+            case 'MONTE ALTO':
+                document.write(`${cidade} é conhecida pelo seu Museu.`);
+                break;
+            case 'MATAO':
+            case 'MATÃO':
+                document.write(`${cidade} é conhecida por suas industrias.`);
+                break;
+            case 'DOBRADA':
+            case 'GUARIROBA':
+                document.write(`${cidade} é conhecida por sua festa.`);
+                break;
+            default:
+                document.write("Cidade não identificada!.");
         }
+        document.write(`<br>`);
+        document.write((cidade == 'TAQUARITINGA' || cidade == 'MATAO') ? 'Possui FATEC' : 'Possui outra instituição')
 
     </script>
 </body>

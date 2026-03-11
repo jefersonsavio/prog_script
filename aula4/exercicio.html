@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Aula 4</title>
+    <meta charset="UTF-8">
+</head>
+    <body>
+        <script type="text/javascript">
+                alert("Bem vindoao exercicio de javaScript");
+        let numero1 = parseFloat(prompt("Informe o primeiro numero: "));
+        let numero2 = parseFloat(prompt("Informe o segundo numero: "));
+
+        if (isNaN(numero1) || isNaN(numero2)) {
+            alert("Informe apenas numeros!");
+        } else {
+            document.write(`Os numeros escolhidos foram: ${numero1} e ${numero2}`)
+        }
+        document.write(`<br>`);
+
+        opcao = parseFloat(prompt("informe a opção: 1 para soma, 2 para subtração, 3 para multiplicação e 4 para divisão"));
+
+        switch (opcao) {
+            case 1:
+            resultado = numero1 + numero2
+                document.write(`o valor da soma dos numeros é: ${resultado}`);
+                break;
+            case 2:
+            resultado = numero1 - numero2
+                document.write(`o valor da subtração dos resultados é: ${resultado}`);
+                break;
+            case 3:
+            resultado = numero1 * numero2
+                document.write(`o valor da multiplicação dos resultados é: ${resultado}`);
+                break;
+            case 4:
+             resultado = numero1 / numero2
+                document.write(`o valor da divisão dos resultados é: ${resultado}`);
+                break;
+            default:
+        }
+        </script>
+    </body>
