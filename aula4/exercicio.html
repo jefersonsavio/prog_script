@@ -18,8 +18,8 @@
         }
         document.write(`<br>`);
 
-        opcao = parseFloat(prompt("informe a opção: 1 para soma, 2 para subtração, 3 para multiplicação e 4 para divisão"));
-
+        let opcao = parseFloat(prompt("informe a opção: 1 para soma, 2 para subtração, 3 para multiplicação e 4 para divisão"));
+        let resultado ='';
         switch (opcao) {
             case 1:
             resultado = numero1 + numero2
@@ -38,6 +38,7 @@
                 document.write(`o valor da divisão dos resultados é: ${resultado}`);
                 break;
             default:
+                resultado = 'Operacao invalida';
         }
         </script>
     </body>
