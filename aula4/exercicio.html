@@ -7,7 +7,7 @@
 </head>
     <body>
         <script type="text/javascript">
-                alert("Bem vindoao exercicio de javaScript");
+                alert("Bem vindo ao exercicio de javaScript");
         let numero1 = parseFloat(prompt("Informe o primeiro numero: "));
         let numero2 = parseFloat(prompt("Informe o segundo numero: "));
 
@@ -34,7 +34,7 @@
                 document.write(`o valor da multiplicação dos resultados é: ${resultado}`);
                 break;
             case 4:
-             resultado = (numero2 > 0) ? numero1 / numero2 : 'Divisão por zero não é permitida';
+             resultado = (numero2 || numero1 == 0) ? numero1 / numero2 : 'Divisão por zero não é permitida';
                 document.write(`o valor da divisão dos resultados é: ${resultado}`);
                 break;
             default:
