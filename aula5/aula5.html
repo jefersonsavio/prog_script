@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
 <head>
-    <title>Aula 5(Vetores e Estruturas de Repeticao)</title>
+    <title>Aula 5 (Vetores e Estruturas de Repeticao)</title>
     <meta charset="UTF-8">
 </head>
 
@@ -14,17 +14,41 @@
         listaBandas.push("RED HOT CHILI PEPPERS");
         listaBandas.push("Metallica", "Iron Maiden");
         listaBandas.push("Scorpions", "Linkin Park");
-       // document.write(listaBandas[2]);
+        listaBandas.push("Slipknot");
+        document.write(listaBandas[2]);
         document.write('<br>');
-        document.write(listaBandas.length);
+        document.write('total de bandas na lista ' + listaBandas.length);
         listaBandas[4] = "AC/DC";
         listaBandas.splice(3, 1);
         document.write('<br>');
 
+        let conteudo = '';
         for (let i = 0; i < listaBandas.length; i++) {
-            document.write(listaBandas[i]);
-            document.write('<br>');
+            conteudo += listaBandas[i] + '<br>';
         }
+        document.write(conteudo);
+
+        conteudo = '';
+        for(i in listaBandas) {
+            conteudo += listaBandas[i] + '<br>';
+        }
+        document.write(conteudo);
+
+        conteudo = '';
+        let i = 0;
+        while (i < listaBandas.length){
+            conteudo += listaBandas[i] + '<br>';
+            i++;
+        }
+        document.write(conteudo);   
+
+        conteudo = '';
+        do {
+            conteudo += listaBandas[i] + '<br>';
+            i+=1;
+        } while (i < listaBandas.length);
+        document.write(conteudo);
+
     </script>
 </body>
 

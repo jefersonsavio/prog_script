@@ -8,37 +8,53 @@
     <body>
         <script type="text/javascript">
                 alert("Bem vindo ao exercicio de javaScript");
-        let numero1 = parseFloat(prompt("Informe o primeiro numero: "));
-        let numero2 = parseFloat(prompt("Informe o segundo numero: "));
 
-        if (isNaN(numero1) || isNaN(numero2)) {
-            alert("Informe apenas numeros!");
-        } else {
-            document.write(`Os numeros escolhidos foram: ${numero1} e ${numero2}`)
-        }
-        document.write(`<br>`);
+        
+        do {// loop principal: repete enquanto o usuário confirmar
+        
+            let numero1 = parseFloat(prompt("Informe o primeiro numero: "));
+            let numero2 = parseFloat(prompt("Informe o segundo numero: "));
 
-        let opcao = parseFloat(prompt("informe a opção: 1 para soma, 2 para subtração, 3 para multiplicação e 4 para divisão"));
-        let resultado ='';
-        switch (opcao) {
-            case 1:
-            resultado = numero1 + numero2
-                document.write(`o valor da soma dos numeros é: ${resultado}`);
-                break;
-            case 2:
-            resultado = numero1 - numero2
-                document.write(`o valor da subtração dos resultados é: ${resultado}`);
-                break;
-            case 3:
-            resultado = numero1 * numero2
-                document.write(`o valor da multiplicação dos resultados é: ${resultado}`);
-                break;
-            case 4:
-             resultado = (numero2 || numero1 == 0) ? numero1 / numero2 : 'Divisão por zero não é permitida';
-                document.write(`o valor da divisão dos resultados é: ${resultado}`);
-                break;
-            default:
-                resultado = 'Operacao invalida';
-        }
+            if (isNaN(numero1) || isNaN(numero2)) {
+                alert("Informe apenas numeros!");
+                continue;
+            }
+
+            document.write(`<hr>`);
+            document.write(`Os numeros escolhidos foram: ${numero1} e ${numero2}`);
+            document.write(`<br>`);
+
+            let opcao = parseInt(prompt("informe a opção: 1 para soma, 2 para subtração, 3 para multiplicação e 4 para divisão"), 10);
+            let resultado = '';
+
+            switch (opcao) {
+                case 1:
+                    resultado = numero1 + numero2;
+                    document.write(`O valor da soma é: ${resultado}`);
+                    break;
+                case 2:
+                    resultado = numero1 - numero2;
+                    document.write(`O valor da subtração é: ${resultado}`);
+                    break;
+                case 3:
+                    resultado = numero1 * numero2;
+                    document.write(`O valor da multiplicação é: ${resultado}`);
+                    break;
+                case 4:
+                    if (numero2 === 0) {
+                        resultado = 'Divisão por zero não é permitida';
+                        document.write(resultado);
+                    } else {
+                        resultado = numero1 / numero2;
+                        document.write(`O valor da divisão é: ${resultado}`);
+                    }
+                    break;
+                default:
+                    resultado = 'Operacao invalida';
+                    document.write(resultado);
+            }
+
+            document.write(`<br>`);
+        } while (confirm('Deseja realizar outro cálculo?'));// se clicar confirm, o loop recomeça / se clicar cancel, o loop termina
         </script>
     </body>
