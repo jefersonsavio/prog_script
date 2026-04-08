@@ -3,8 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-<<<<<<< HEAD
-
+    <link rel="stylesheet" href="evento.css">
     <script type="text/javascript">
 
         function conversaoRealParaDolar(valor, dolar) {
@@ -23,7 +22,7 @@
     </script>
 </head>
 
-<body>
+<body align="center">
 
     <h1>Conversão real / dolar </h1>
     <b>Dolar: </b><input type="number" id="dolar" value="5.19">
@@ -31,10 +30,9 @@
     <b>valor: </b><input type="number" id="valor">
     <br><br>
     <button id="btnConverterDolar">Converter Dolar para Real: </button>
-    <button id></button>
+    <button id="btnConverter">Converter</button>
     <p><b id="resultado">Resultado: </b></p>
 
-=======
     <title>Aula 06 - Eventos</title>  
 </head>
 
@@ -49,7 +47,7 @@
     <p><label for="valor">Valor: </label></p>
     <input type="number" id="valor">
     <br><br>
-    <select id="tipo">
+    <select id="btnConverterDolar">
         <option value="1">Real Para Dolar</option>
         <option value="2">Dolar Para Real</option>
     </select>
@@ -83,6 +81,8 @@
             return "R$ " + (dolar * valor).toFixed(2).replace(".", ",") + "<br>"
         }
     </script>
->>>>>>> f8edcb91fde33702338590c4f5f50455c76f9d12
+     <footer>
+        <p>Programação de Scripts</p>
+    </footer>
 </body>
 </html>

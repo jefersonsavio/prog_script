@@ -33,3 +33,23 @@
             display:inline-block;
             padding: 5px 0 0  0;    
         }
+        a:visited{
+            color: brown;
+        }
+        a:hover{
+            color: aliceblue;
+            background: black;
+        }
+        nav p{
+            font-family: 'Courier New', Courier, monospace;
+            color: rgb(15, 15, 68);
+        }
+        .texto {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: rgb(86, 57, 2);
+            font-size: xx-large;
+        }
+        #rodape {
+            color: rgb(64, 10, 115);
+            font-size: x-large;
+        }
