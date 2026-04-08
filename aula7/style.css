@@ -1,0 +1,35 @@
+     header{
+            background: rgb(105, 235, 105);
+            width:150%;
+            height: 150px;
+            padding: center;
+            text-align: center;
+            color: rgb(107, 7, 7);
+        }
+        nav{
+            background: rgb(161, 227, 161);
+            width:100%;
+            height: 100px;
+            padding: 5px;
+        }
+        main{
+            background: rgb(216, 246, 216);
+            width:100%;
+            height: 400px; padding: 20px;
+            padding: 5px;
+        }
+        footer{
+            background: rgb(43, 236, 43);
+            width:100%;
+            height: 50px;
+            text-align: center;
+            padding: 5px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+        }
+        a{
+            text-decoration:none;
+            display:inline-block;
+            padding: 5px 0 0  0;    
+        }

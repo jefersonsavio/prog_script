@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
-    <title> Aula 6 - Evento</title>
     <meta charset="UTF-8">
+<<<<<<< HEAD
 
     <script type="text/javascript">
 
@@ -34,6 +34,55 @@
     <button id></button>
     <p><b id="resultado">Resultado: </b></p>
 
-</body>
+=======
+    <title>Aula 06 - Eventos</title>  
+</head>
 
+<body>
+    <h1>Conversão Real / Dolar</h1>
+    <h2>"otimização de código atraves de funções"</h2>
+
+    <p><label for="dolar">Dolar: </label></p>
+    <input type="number" id="dolar" value="5.19">
+    <br><br>
+
+    <p><label for="valor">Valor: </label></p>
+    <input type="number" id="valor">
+    <br><br>
+    <select id="tipo">
+        <option value="1">Real Para Dolar</option>
+        <option value="2">Dolar Para Real</option>
+    </select>
+    <button id="btnConverter">Converter</button>
+    <br><br>
+    <p><b id="resultado">Resultado: </b></p>
+    <script type="text/JavaScript"> 
+        window.onload = function() {
+            document.getElementById('tipo').onchange = function(){
+                if (document.getElementById('tipo').value == 1) {
+                    document.getElementById('dolar').value = 5.19
+                    document.getElementById('valor').value = ""
+                }
+                else{
+                    document.getElementById('dolar').value = ""
+                    document.getElementById('valor').value = 5.19
+                }
+            }
+            document.getElementById('btnConverter').onclick = function() {
+                let dolar = document.getElementById('dolar').value
+                let valor = document.getElementById('valor').value
+                document.getElementById('tipo').value == 1 
+                let resultado = document.getElementById('tipo').value == 1 ? converterRealDolar(valor, dolar) : converterDolarReal(dolar, valor)
+                document.getElementById('resultado').innerHTML = "Resultado: " + resultado
+            }
+        }
+        function converterRealDolar(valor, dolar) {
+            return "USS " + (valor / dolar).toFixed(2).replace(".", ",") + "<br>"
+        }
+        function converterDolarReal(dolar, valor) {
+            return "R$ " + (dolar * valor).toFixed(2).replace(".", ",") + "<br>"
+        }
+    </script>
+>>>>>>> f8edcb91fde33702338590c4f5f50455c76f9d12
+</body>
 </html>
