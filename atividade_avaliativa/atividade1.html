@@ -1,0 +1,75 @@
+//criar uma aplicação html/javascript/ personamilzada na qual
+//o usuario selecionqa uma pergunta, clica em um botao e o sistema exibe a resposta;
+//as respostas devem ser mantidas em um historico e exibidas em um elemento table(lista);
+//criar um botao para limpar historico;
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="atividade1.css">
+</head>
+<body>
+    <h1 class="titulo">Atividade Avaliativa 1</h1>
+    <br>
+    <h4>Jeferson Cristiano Savio</h4>
+    <h4>Josimar Benedito Alves de Almeida</h4>
+
+    <h2>Selecione uma Pergunta</h2>
+    <div class="perguntas">
+    <select id="pergunta">
+        <option value="">-- Escolha uma pergunta --</option>
+        <option value="1">O que são vetores e como eles são utilizados em javascript?</option>
+        <option value="2">O quo são funções e como elas são utilizadas em javascript?</option>
+        <option value="3">O que são eventos e apresente eventos.</option>
+    </select>
+    </div>
+    <br>
+    <div class="botoes">
+    <button id="btnResponder">Responder</button>
+    <button class="btn-clear" id="btnLimpar">Limpar Histórico</button>
+    </div>
+
+    <h3>Histórico de Respostas</h3>
+    <table id="tabelaHistorico">
+        <thead>
+            <tr>
+                <th>Pergunta</th>
+                <th>Resposta</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <script>
+        respostas = {
+            "1": "É uma estrutura que armazena elementos ordenados. Cada elemento é acessado por um índice numérico que começa em 0",
+            "2": "Funções são um bloco de códigos que executam uma tarefa específica ou retornam valores, só funcionam quando são chamadas ajudam a evitar repetições e organizam o código e funcionam quando são chamadas.",
+            "3": "Eventos são ações que acontecem no navegador e que podem ser detectadas pelo JavaScript para executar algum código em resposta. Exemplo: Evento de mouse (click)"
+        };
+
+        selectPergunta = document.getElementById("pergunta");
+        tabelaHistorico = document.getElementById("tabelaHistorico").querySelector("tbody");
+        btnResponder = document.getElementById("btnResponder");
+        btnLimpar = document.getElementById("btnLimpar");
+        btnResponder.addEventListener("click", () => {
+            valor = selectPergunta.value;
+            if (!valor) {
+                alert("Por favor, selecione uma pergunta.");
+                return;
+            }
+            perguntaTexto = selectPergunta.options[selectPergunta.selectedIndex].text;
+            respostaTexto = respostas[valor] || "Resposta não encontrada.";
+            novaLinha = document.createElement("tr");
+            novaLinha.innerHTML = `<td>${perguntaTexto}</td><td>${respostaTexto}</td>`;
+            tabelaHistorico.appendChild(novaLinha);
+        });
+        btnLimpar.addEventListener("click", () => {
+            if (confirm("Tem certeza que deseja limpar o histórico?")) {
+                tabelaHistorico.innerHTML = "";
+            }
+        });
+    </script>
+
+</body>
+</body>
