@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <script type="text/javascript" src="vue.js"></script>
+</head>
+<body>
+    <div id="app" class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1>Cadastro de Livro</h1>
+                <form action="#" method="post"@submit.prevent>
+                    <label for="codigo">Código:</label>
+                    <input type="number" class="form-control mb-2" v-model="codigo">
+                    <label for="titulo">Título:</label>
+                    <input type="text" class="form-control mb-2"v-model="titulo">
+                    <label for="editora">Editora:</label>
+                    <input type="text" class="form-control mb-2" v-model="editora">
+                    <label for="ano">Ano:</label>
+                    <input type="number" class="form-control mb-2" v-model="ano">
+                   <div v-if>
+                    <button class="btn btn-primary">Salvar</button>
+                   </div>
+                    <div v-else>
+                        <button class="btn btn-secondary">Salvar</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <h1>Lista de Livros</h1>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Título</th>
+                            <th>Editora</th>
+                            <th>Ano</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        class Livro {
+            constructor(codigo, titulo, editora, ano) {
+                this.codigo = codigo
+                this.titulo = titulo
+                this.editora = editora
+                this.ano = ano
+            }
+        }
+
+    </script>
+</body>
+</html>
