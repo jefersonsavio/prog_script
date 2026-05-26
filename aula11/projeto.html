@@ -77,28 +77,41 @@
                 titulo: '',
                 editora: '',
                 ano: '',
+                posicao: -1,
                 listaLivros: []
             },
             methods: {
-                salvar: function() {
+                salvar: function () {
                     let livro = new Livro(this.codigo, this.titulo, this.editora, this.ano)
-                    this.listaLivros.push(livro)
+                    if (this.posicao == -1) {
+                        this.listaLivros.push(livro)
+                    } else {
+                        Vue.set(this.listaLivros, this.posicao, livro)
+                        this.listaLivros.push(livro)
+                    }
                     this.limpar()
                 },
-                verificar: function() {
+                verificar: function () {
                     return this.codigo != '' && this.titulo != '' && this.editora != '' && this.ano != ''
                 },
-                limpar: function() {
+                limpar: function () {
+                    this.posicao = -1
                     this.codigo = ''
                     this.titulo = ''
                     this.editora = ''
                     this.ano = ''
                 },
-                alterar: function(posicao){
+                alterar: function (posicao) {
+                    this.posicao = posicao
                     this.codigo = this.listaLivros[posicao].codigo
                     this.titulo = this.listaLivros[posicao].titulo
                     this.editora = this.listaLivros[posicao].editora
                     this.ano = this.listaLivros[posicao].ano
+                },
+                excluir: function(posicao){
+                    if(confirm('Tem certeza que deseja excluir?')){
+                        this.listaLivros.splice(posicao,1)
+                    }
                 }
             }
         })
