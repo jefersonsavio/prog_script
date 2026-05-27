@@ -54,7 +54,7 @@
                             <td>{{ livro.ano }}</td>
                             <td><a href="#" class="btn btn-warning" @click="alterar(posicao)">Alterar</a></td>
                             <td>
-                                <a href="#" class="btn btn-danger"@click = "excluir(posicao)">Excluir</a>
+                                <a href="#" class="btn btn-danger" @click="excluir(posicao)">Excluir</a>
                             </td>
                         </tr>
                     </tbody>
@@ -91,6 +91,7 @@
                         Vue.set(this.listaLivros, this.posicao, livro)
                         this.listaLivros.push(livro)
                     }
+                    this.armazenar()
                     this.limpar()
                 },
                 verificar: function () {
@@ -110,20 +111,24 @@
                     this.editora = this.listaLivros[posicao].editora
                     this.ano = this.listaLivros[posicao].ano
                 },
-                excluir: function(posicao){
-                    if(confirm('Tem certeza que deseja excluir?')){
-                        this.listaLivros.splice(posicao,1)
+                excluir: function (posicao) {
+                    if (confirm('Tem certeza que deseja excluir?')) {
+                        this.listaLivros.splice(posicao, 1)
+                        this.armazenar()
                     }
                 },
-                armazenar: function(){
+                armazenar: function () {
                     localStorage.setItem('listaLivros', JSON.stringify(this.listaLivros))
                 },
-                carregar: function(){
+                carregar: function () {
                     let dados = localStorage.getItem('listaLivros')
-                    if(dados=!null){
+                    if (dados = !null) {
                         this.listaLivros = JSON.parse(dados)
                     }
                 }
+            },
+            crated() {
+                this.carregar()
             }
         })
     </script>
