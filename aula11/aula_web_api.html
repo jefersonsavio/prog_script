@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-bt">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -12,11 +12,32 @@
 <body>
     <div id="app">
         <table>
-
+            <tr v-for="usuario in lista">
+                <td>{{ usuario.id }}</td>
+                <td>{{ usuario.name }}</td>
+                <td>{{ usuario.email }}</td>
+                <td> {{ usuario.address }}</td>
+            </tr>
         </table>
+        <button @click="carregar()">Carregar</button>
     </div>
     <script type="text/javascript">
         let endpoint = "https://jsonplaceholder.typicode.com/users";
+
+        let app = new Vue({
+            el: "#app",
+            data: {
+                lista: []
+            },
+            methods: {
+                carregar: async function () {
+                    let dados = await fetch(endpoint, {
+                        method: "GET"
+                    }).then(res => res.json()).catch(erro => alert(erro));
+                    this.lista = dados;
+                }
+            }
+        });
     </script>
 
 </body>
