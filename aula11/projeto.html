@@ -124,24 +124,24 @@
                 },
                 carregar: function () {
                     let dados = localStorage.getItem('listaLivros')
-                    if (dados = !null) {
+                    if (dados != null) {
                         this.listaLivros = JSON.parse(dados)
                     }
                 },
                 carregarApi: async function () {
-                    let dados = await fetch(endpoint).then(res => res.json()).catch(erro => alert(erro));
+                    let dados = await fetch(endpoint).then(res => res.json()).catch(erro => alert(erro))
                     dados.docs.forEach(item => {
                         let novoLivro = new Livro(item.cover_i, item.title, "Open Library", item.first_publish_year)
                         this.listaLivros.push(novoLivro)
 
                     });
                 },
-                create() {
-                    this.carregar()
-                    this.carregarApi()
-                }
-            },
 
+            },
+            created() {
+                this.carregar()
+                this.carregarApi()
+            }
         })
     </script>
 </body>
